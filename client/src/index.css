@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@import "tailwindcss";
+
+@config "../tailwind.config.js";
+
+@layer base {
+  body {
+    @apply bg-fintech-darker text-fintech-text font-sans antialiased;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-4 py-2 bg-fintech-green text-white font-medium rounded-lg hover:bg-fintech-greenHover transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-fintech-green/50 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  
+  .btn-secondary {
+    @apply px-4 py-2 bg-fintech-card text-fintech-text font-medium rounded-lg hover:bg-fintech-card/80 transition-all duration-200 border border-fintech-border focus:outline-none focus:ring-2 focus:ring-fintech-border;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-2 bg-fintech-dark border border-fintech-border rounded-lg focus:outline-none focus:border-fintech-green focus:ring-1 focus:ring-fintech-green text-fintech-text transition-colors placeholder-fintech-textMuted;
+  }
+  
+  .card {
+    @apply bg-fintech-card rounded-2xl border border-fintech-border shadow-lg p-6;
+  }
+  
+  /* Scrollbar customization */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-fintech-border rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-fintech-textMuted;
+  }
+}
