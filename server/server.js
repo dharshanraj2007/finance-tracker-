@@ -16,7 +16,16 @@ const app = express();
 
 // Middleware
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://finance-tracker-opal-five.vercel.app",
+      "https://finance-tracker-a8f4794nr-team-alone1.vercel.app",
+    ],
+    credentials: true,
+  })
+);
 app.use(helmet());
 
 if (process.env.NODE_ENV === 'development') {
